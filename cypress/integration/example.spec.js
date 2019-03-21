@@ -1,48 +1,139 @@
-// js teorico
-
-// funciones
-
-// funciones nombradas o declaradas
-//function suma(x, y) {
-//    return x + y;
-//}
-
-// funciones flecha
-//const suma = (x, y) => x + y;
-    
-// objetos - objetos lierales
-/*const casillero1 = {
-    alejandra: [1, 2, 3, 4],
-    tivi: '3324324323',
-    mimetodo(){
-        console.log('mio');
-        //return 10;
-    }
-};
-
-console.log(casillero1.mimetodo());
-*/
-// cadena literal - cadena - string
-// const mitexto = 'texto';
-// array literal - array // puede contener cualquier tipo de valor
-// const lista = [1, {}, function a() {}, true, [1, 2, 3]];
-/*
-const suma = (x, y) => x + y;
-
-describe('Test Numbers', () => {
-    it('sum simple', () => {
-        expect(suma(2, 3)).to.equal(5); // asercion - assert's
-    });
-    it('suma grande', () => {
-        expect([1,2,3]).includes(4);
-    });
-    it('sum mas grande', () => {
-        expect(suma(20000, 300000)).to.equal(320000); // asercion - assert's
+describe('Test Agente Compra individual', () => {
+    it('Paquete Simple ', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('ale12168@gmail.com');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('.c-agent-price-button > .c-button').click();
+        cy.get('#btn_1-Aviso-Simple').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
     });
 });
-*/
 
-describe('Test Agente Compra', () => {
+
+describe('Test Agente Compra individual', () => {
+    it('Paquete Destacado', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('ale12168@gmail.com');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('.c-agent-price-button > .c-button').click();
+        cy.get('#btn_1-Aviso-Destacado').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
+    });
+});
+
+describe('Test Agente Compra individual', () => {
+    it('Paquete Premium', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('ale12168@gmail.com');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('.c-agent-price-button > .c-button').click();
+        cy.get('#btn_1-Aviso-Premium').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
+    });
+});
+
+
+describe('Test Agente Compra Grupal', () => {
+    it('Paquete 10 Avisos', () => {
+        cy.visit('https://dev.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('ale12168@gmail.com');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('.c-agent-price-button > .c-button').click();
+        cy.get('#btn_1-Aviso-Simple').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
+    });
+});
+
+
+describe('Test Agente2', () => {
+    it('Paquete Destacado', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('ale12168@gmail.com');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('.c-agent-price-button > .c-button').click();
+        cy.get('#btn_1-Aviso-Destacado').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
+    });
+});
+
+describe('Test Agente3', () => {
+    it('Paquete Premium', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('ale12168@gmail.com');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('.c-agent-price-button > .c-button').click();
+        cy.get('#btn_1-Aviso-Premium').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
+    });
+});
+
+/*describe('Test Agente Compra', () => {
     it('Publicación PN', () => {
         cy.visit('https://pre.urbania.pe');
         cy.get('#lnkLogin').click({ force: true });
@@ -66,15 +157,86 @@ describe('Test Agente Compra', () => {
         cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
         cy.get('.pay-card > .c-button').click();
         cy.get('#btnPas').click();
-        cy.get('.c-button--disabled').click();*/
+        cy.get('.c-button--disabled').click();
+    });
+});*/
+
+
+
+/*
+describe('Test Agente Tarifas', () => {
+    it('Paquete 10 Avisos WEB', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('maria.guevara@ecodigital.pe');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('#btn_10-Avisos').click();
+        cy.get('#btn_10-Avisos').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
+    });
+});*/
+/*
+describe('Test Agente Tarifas', () => {
+    it('Paquete 10 Avisos + 6 Impresos', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('maria.guevara@ecodigital.pe');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('#btn_10-Avisos').click();
+        cy.get('#btn_10-Avisos-\+-6-Impresos').click();
+        cy.get('btn_10-Avisos-+-6-Impresos').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
+    });
+});*/
+
+/*
+describe('Test Agente Tarifas', () => {
+    it('Paquete 25 Avisos WEB', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('maria.guevara@ecodigital.pe');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('#btn_25-Avisos').click();
+        cy.get('#btn_25-Avisos').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
     });
 });
 
-
-
-
-/*describe('Test Agente Compra', () => {
-    it('Paquete Simple', () => {
+describe('Test Agente Tarifas', () => {
+    it('Paquete 60 Avisos WEB', () => {
         cy.visit('https://pre.urbania.pe');
         cy.get('#lnkLogin').click({ force: true });
         cy.get('#email').type('maria.guevara@ecodigital.pe');
@@ -84,52 +246,167 @@ describe('Test Agente Compra', () => {
             .contains('Agente')
             .click({ force: true });
         cy.get('.c-agent-container > .c-button').click();
-        cy.get('.c-agent-price-button > .c-button').click();
+        cy.get('#btn_60-Avisos').click();
+        cy.get('#btn_60-Avisos').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
+    });
+});
+
+describe('Test Agente Tarifas', () => {
+    it('Paquete 60 Avisos WEB', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('maria.guevara@ecodigital.pe');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('#btn_100-Avisos').click();
+        cy.get('#btn_100-Avisos').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#btnPas').click();
+        cy.get('.c-button--disabled').click();
+    });
+});*/
+
+/*describe('Test Agente Tarifas', () => {
+    it('Paquete 10 Avisos WEB - PE', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('maria.guevara@ecodigital.pe');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('#btn_10-Avisos').click();
+        cy.get('#btn_10-Avisos').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get(':nth-child(3) > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#lkbRegresar').click();
+    });
+});
+
+describe('Test Agente Tarifas', () => {
+    it('Paquete 25 Avisos WEB - PE', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('maria.guevara@ecodigital.pe');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('#btn_25-Avisos').click();
+        cy.get('#btn_25-Avisos').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get(':nth-child(3) > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#lkbRegresar').click();
+    });
+});
+
+describe('Test Agente Tarifas', () => {
+    it('Paquete 60 Avisos WEB - PE', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('maria.guevara@ecodigital.pe');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('#btn_60-Avisos').click();
+        cy.get('#btn_60-Avisos').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get(':nth-child(3) > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#lkbRegresar').click();
+    });
+});
+
+describe('Test Agente Tarifas', () => {
+    it('Paquete 100 Avisos WEB - PE', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('maria.guevara@ecodigital.pe');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Agente')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('#btn_100-Avisos').click();
+        cy.get('#btn_100-Avisos').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get(':nth-child(3) > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#lkbRegresar').click();
+    });
+});*/
+/*
+describe('Test Empresa Tarifas', () => {
+    it('Paquete web', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('maria.guevara@ecodigital.pe');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Empresa')
+            .click({ force: true });
+        cy.get('.c-agent-container > .c-button').click();
+        cy.get('#btn_100-Avisos').click();
+        cy.get('#btn_100-Avisos').click();
+        cy.get('#btn_30-días').click();
+        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
+        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
+        cy.get(':nth-child(3) > .c-input-radio > .pretty-input').click();
+        cy.get('.pay-card > .c-button').click();
+        cy.get('#lkbRegresar').click();
+    });
+});*/
+
+/*describe('Test Posting Empresa', () => {
+    it('Tipo Residencial', () => {
+        cy.visit('https://pre.urbania.pe');
+        cy.get('#lnkLogin').click({ force: true });
+        cy.get('#email').type('ale12168@gmail.com');
+        cy.get('#clave').type('123456*');
+        cy.get('.login').click();
+        cy.get('.b-submenu-items.b-submenu-items--login')
+            .contains('Empresa')
+            .click({ force: true });
+        cy.get('.bgd-proyectos > a').click();
+        cy.get('#delete-ads').click();
+        cy.get('.sc-iAyFgw > .sc-jWBwVP > .sc-brqgnP > :nth-child(1) > .sc-cMljjf > .sc-iRbamj').type('Manantiales Real Boot');
+        cy.get(':nth-child(1) > .sc-iAyFgw > .sc-jWBwVP > .sc-brqgnP > :nth-child(2) > .sc-cMljjf > .sc-Rmtcm > .sc-csuQGl').type('Residencial');
+
         cy.get('#btn_1-Aviso-Simple').click();
-        cy.get('#btn_30-días').click();
-        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
-        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
-        cy.get('.pay-card > .c-button').click();
-        cy.get('#btnPas').click();
-        cy.get('.c-button--disabled').click();
-    });
-});*/
-
-/*describe('Test Agente3', () => {
-    it('Paquete Premium', () => {
-        cy.visit('https://pre.urbania.pe');
-        cy.get('#lnkLogin').click({ force: true });
-        cy.get('#email').type('maria.guevara@ecodigital.pe');
-        cy.get('#clave').type('123456*');
-        cy.get('.login').click();
-        cy.get('.b-submenu-items.b-submenu-items--login')
-            .contains('Agente')
-            .click({ force: true });
-        cy.get('.c-agent-container > .c-button').click();
-        cy.get('.c-agent-price-button > .c-button').click();
-        cy.get('#btn_1-Aviso-Premium').click();
-        cy.get('#btn_30-días').click();
-        cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
-        cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
-        cy.get('.pay-card > .c-button').click();
-        cy.get('#btnPas').click();
-        cy.get('.c-button--disabled').click();
-    });
-});*/
-
-/*describe('Test Agente2', () => {
-    it('Paquete Destacado', () => {
-        cy.visit('https://pre.urbania.pe');
-        cy.get('#lnkLogin').click({ force: true });
-        cy.get('#email').type('maria.guevara@ecodigital.pe');
-        cy.get('#clave').type('123456*');
-        cy.get('.login').click();
-        cy.get('.b-submenu-items.b-submenu-items--login')
-            .contains('Agente')
-            .click({ force: true });
-        cy.get('.c-agent-container > .c-button').click();
-        cy.get('.c-agent-price-button > .c-button').click();
-        cy.get('#btn_1-Aviso-Destacado').click();
         cy.get('#btn_30-días').click();
         cy.get('.type-voucher > :nth-child(1) > .pretty-input').click();
         cy.get('.alignCenter > .c-input-radio > .pretty-input').click();
